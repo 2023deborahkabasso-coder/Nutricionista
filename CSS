@@ -1,0 +1,260 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #fff0f5, #e5ffed);
+    min-height: 100vh;
+    padding: 25px;
+    color: #244b38;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ZONA DE CHAT */
+
+.zona-chat {
+    background: white;
+    border-radius: 25px;
+    min-height: 480px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado {
+    background: #ffb6cf;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    background: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+}
+
+.encabezado h1 {
+    font-size: 21px;
+    color: #185c39;
+}
+
+.encabezado p {
+    font-size: 13px;
+    color: #4a6856;
+    margin-top: 3px;
+}
+
+.estado {
+    margin-left: auto;
+    color: #168a49;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.mensajes {
+    padding: 25px;
+    flex: 1;
+    min-height: 300px;
+    max-height: 430px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.mensaje {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 85%;
+}
+
+.mensaje.usuario {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    background: #e7f8e9;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+.burbuja {
+    padding: 14px 17px;
+    border-radius: 18px;
+    background: #e9f7e9;
+    line-height: 1.5;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.burbuja p {
+    margin-top: 7px;
+}
+
+.usuario .burbuja {
+    background: #ffd8e7;
+    border-bottom-right-radius: 4px;
+}
+
+.agente .burbuja {
+    border-bottom-left-radius: 4px;
+}
+
+.estado-chat {
+    padding: 0 25px 15px;
+    font-size: 13px;
+    color: #777;
+}
+
+/* ZONA DE ESCRITURA */
+
+.zona-escritura {
+    background: #20b34f;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.titulo-escritura {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: white;
+}
+
+.titulo-escritura span {
+    font-size: 28px;
+}
+
+.titulo-escritura h2 {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.titulo-escritura p {
+    font-size: 13px;
+    margin-top: 4px;
+    color: #e4ffe9;
+}
+
+.entrada {
+    background: white;
+    padding: 15px;
+    border-radius: 18px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 90px;
+    border: none;
+    outline: none;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 15px;
+    color: #244b38;
+}
+
+textarea::placeholder {
+    color: #999;
+}
+
+.acciones {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+}
+
+#contador {
+    font-size: 12px;
+    color: #888;
+}
+
+button {
+    background: #ff8fb5;
+    color: #513047;
+    border: none;
+    border-radius: 25px;
+    padding: 11px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background: #ff6f9f;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.nota {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/* DISEÑO RESPONSIVE */
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .zona-chat {
+        min-height: 430px;
+    }
+
+    .mensajes {
+        padding: 15px;
+        max-height: 400px;
+    }
+
+    .mensaje {
+        max-width: 95%;
+    }
+
+    .zona-escritura {
+        padding: 18px;
+    }
+
+    .encabezado {
+        padding: 15px;
+    }
+
+    .estado {
+        font-size: 10px;
+    }
+}
