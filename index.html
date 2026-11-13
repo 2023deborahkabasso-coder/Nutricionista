@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutricionista Virtual</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="contenedor">
+
+        <!-- ZONA DE CHAT -->
+        <section class="zona-chat">
+            <header class="encabezado">
+                <div class="logo">🥑</div>
+                <div>
+                    <h1>Nutricionista</h1>
+                    <p>Tu espacio para comer mejor</p>
+                </div>
+                <span class="estado">● En línea</span>
+            </header>
+
+            <div class="mensajes" id="mensajes" aria-live="polite">
+                <div class="mensaje agente">
+                    <div class="avatar">🥗</div>
+                    <div class="burbuja">
+                        <strong>¡Hola! Soy tu nutricionista virtual.</strong>
+                        <p>Estoy acá para ayudarte a mejorar tu alimentación. Podemos hablar sobre comidas saludables, recetas y hábitos alimenticios.</p>
+                        <p>¿Qué te gustaría consultar hoy?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="estado-chat" class="estado-chat" aria-live="polite"></div>
+        </section>
+
+        <!-- ZONA DE ESCRITURA -->
+        <section class="zona-escritura">
+            <div class="titulo-escritura">
+                <span>💬</span>
+                <div>
+                    <h2>Zona de escritura</h2>
+                    <p>Escribí tu consulta aquí</p>
+                </div>
+            </div>
+
+            <div class="entrada">
+                <textarea
+                    id="mensaje"
+                    maxlength="500"
+                    placeholder="Escribí tu mensaje..."
+                    aria-label="Escribí tu consulta"
+                ></textarea>
+
+                <div class="acciones">
+                    <span id="contador">0/500</span>
+                    <button id="enviar" type="button">
+                        Enviar <span>➤</span>
+                    </button>
+                </div>
+            </div>
+
+            <p class="nota">🌱 ¡Pequeños cambios crean grandes hábitos!</p>
+        </section>
+
+    </main>
+
+</body>
+</html>
